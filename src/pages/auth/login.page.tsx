@@ -11,6 +11,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import{ toast } from "sonner"
+
 
 
 const LoginPage = () => {
@@ -23,6 +25,7 @@ const LoginPage = () => {
       console.log("Login with Google successful");
     } else {
       console.error("Login with Google failed:", result.error);
+      toast.error("Login with Google failed: " + result.error?.message);
     }
   }
 
