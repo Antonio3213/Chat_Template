@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button"
+import { useAuthActions } from "@/hooks/use-Auth-Actions"
 import { useAuth, useUser } from "reactfire"
 
 
@@ -5,6 +7,7 @@ const DashboardPage = () => {
 
   const auth = useAuth()
   const {data : user} = useUser()
+  const {logout} = useAuthActions
   return (
     <div>
       <h1>Dashboard Page</h1>
@@ -12,7 +15,7 @@ const DashboardPage = () => {
       <p>Email: {user?.email || "No email available"}</p>
 
       {/* Boton para cerrar sesión */}
-      <button onClick={() => auth.signOut()}>Sign Out</button>
+      <Button onClick={logout}>Sign Out</Button>
     </div>
   )
 }
