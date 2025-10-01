@@ -32,6 +32,7 @@ export const useAuthActions = () => {
             setLoading(false);
         }
     };
+    
 
     const register = async (data: { email: string; password: string; displayName: string }): Promise<AuthActionsResponse> => {
         setLoading(true);
